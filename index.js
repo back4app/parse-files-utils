@@ -15,10 +15,10 @@ if (require.main === module) {
     }
     var utils = require('./lib')(config);
 } else {
-    module.exports = function (config) {
+    module.exports = function (config, handler) {
         if (config) {
             config.exportedModule = true;
         }
-        return require('./lib')(config);
+        return require('./lib')(config, handler);
     }
 }
